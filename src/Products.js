@@ -4,9 +4,8 @@ import ProductList from "./components/ProductList";
 import Sort from "./components/Sort";
 import { useFilterContext } from "./context/filter_context";
 
-const Products = () => {
-  const { filter_products } = useFilterContext();
-
+const Products = (curElem) => {
+  const { id, name, image, price, category } = curElem;
   return (
     <Wrapper>
       <div className="container grid grid-filter-column">
