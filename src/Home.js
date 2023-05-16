@@ -1,9 +1,17 @@
-import React from "react";
-import styled from "styled-components";
+import FeatureProduct from "./components/FeatureProduct";
 import HeroSection from "./components/HeroSection";
 
 const Home = () => {
-  return <HeroSection />;
+  const data = {
+    name: "pet store",
+  };
+
+  return (
+    <>
+      <HeroSection myData={data} />
+      <FeatureProduct />
+    </>
+  );
 };
 
 export default Home;
