@@ -6,9 +6,11 @@ import PageNavigation from "./components/PageNavigation";
 import MyImage from "./components/MyImage";
 import { Container } from "./styles/Container";
 import FormatPrice from "./Helpers/FormatPrice";
+import Star from "./components/Star";
 import { MdSecurity } from "react-icons/md";
 import { GiDeliveryDrone } from "react-icons/gi";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
+import AddToCart from "./components/AddToCart";
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -54,7 +56,7 @@ const SingleProduct = () => {
           <div className="product-data">
             <h2>{name}</h2>
             <p>{stars}</p>
-            <p>{reviews} reviews</p>
+            <Star stars={stars} reviews={reviews} />
             <p className="product-data-price">
               List price : {}
               <del>
@@ -89,10 +91,11 @@ const SingleProduct = () => {
 
             <div className="product-data-info">
               <p>
-                Available:
-                <span> {stock > 0 ? "In Stock" : "Not Available"}</span>
+                <span> {stock > 0 ? "In Stock" : "Out of Stock"}</span>
               </p>
             </div>
+            <hr />
+            {stock > 0 && <AddToCart product={singleProduct} />}
           </div>
         </div>
       </Container>
