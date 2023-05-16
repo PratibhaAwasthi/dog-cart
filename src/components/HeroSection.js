@@ -10,13 +10,13 @@ const HeroSection = () => {
           <div className="hero-section-data">
             <h1> The Pet Pantry</h1>
             <span>
-              <span>
+              {/* <span>
                 <img
                   src="images/heartlogo.png"
                   alt="image not supported"
                   className="titleBackground"
                 />
-              </span>
+              </span> */}
             </span>
             <p>
               At The Pet Pantry, we understand that pets have unique dietary
