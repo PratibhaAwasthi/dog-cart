@@ -29,7 +29,7 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  // API call for Single-Products
+  // my 2nd api call for single product
 
   const getSingleProduct = async (url) => {
     dispatch({ type: "SET_SINGLE_LOADING" });
