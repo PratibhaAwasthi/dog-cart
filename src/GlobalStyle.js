@@ -162,7 +162,7 @@ export const GlobalStyle = createGlobalStyle`* {
     }
     }
   
-     @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media.mobile}) {
          html {
         font-size: 50%;
       }
