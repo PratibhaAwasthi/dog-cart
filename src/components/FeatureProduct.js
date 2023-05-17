@@ -6,14 +6,18 @@ const FeatureProduct = () => {
   const { isLoading, featureProducts } = useProductContext();
 
   if (isLoading) {
-    return <div> ......Loading </div>;
+    return <div>...Loading</div>;
   }
 
   return (
     <Wrapper className="section">
       <div className="container">
-        {/* <div className="intro-data">Check Now!</div> */}
+        {/* Introduction */}
+
+        {/* Heading */}
         <div className="common-heading">Here you Find!</div>
+
+        {/* Grid of feature products */}
         <div className="grid grid-three-column">
           {featureProducts.map((curElem) => {
             return <Product key={curElem.id} {...curElem} />;
@@ -40,6 +44,7 @@ const Wrapper = styled.section`
     position: relative;
     overflow: hidden;
     transition: all 0.5s linear;
+
     &::after {
       content: "";
       position: absolute;
@@ -51,12 +56,15 @@ const Wrapper = styled.section`
       transition: all 0.2s linear;
       cursor: pointer;
     }
+
     &:hover::after {
       width: 100%;
     }
+
     &:hover img {
       transform: scale(1.2);
     }
+
     img {
       max-width: 90%;
       margin-top: 1.5rem;
@@ -116,6 +124,7 @@ const Wrapper = styled.section`
       &:hover a {
         color: #fff;
       }
+
       a {
         color: rgb(98 84 243);
         font-size: 1.4rem;

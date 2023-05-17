@@ -8,7 +8,10 @@ const HeroSection = () => {
       <div className="container">
         <div className="grid grid-two-column">
           <div className="hero-section-data">
-            <h1> The Pet Pantry</h1>
+            <p className="intro-data">Welcome to </p>
+            <h1>
+              <span className="logoText">ReNew</span>Electronics
+            </h1>
             <span>
               {/* <span>
                 <img
@@ -19,13 +22,13 @@ const HeroSection = () => {
               </span> */}
             </span>
             <p>
-              At The Pet Pantry, we understand that pets have unique dietary
-              needs just like humans. That's why we offer a variety of premium
-              pet food brands, as well as supplements and treats, to ensure that
-              your furry friend is getting all the nutrients they need to
-              thrive.
+              At ReNewElectronics, we believe in the power of sustainability and
+              the importance of extending the lifespan of electronics. Our
+              mission is to reduce electronic waste by providing a platform
+              where individuals can buy and sell pre-owned electronics with
+              confidence.
             </p>
-            <NavLink>
+            <NavLink to="/products">
               <Button>Shop</Button>
             </NavLink>
           </div>
@@ -33,7 +36,7 @@ const HeroSection = () => {
           <div className="hero-section-image">
             <figure>
               <img
-                src="images/HeroDesign.jpeg"
+                src="https://w0.peakpx.com/wallpaper/194/292/HD-wallpaper-samsung-galaxy-a50-modern-smartphone-modern-technology-smartphone-on-a-white-background-samsung.jpg"
                 alt="Image not supported"
                 className="img-style"
               />
@@ -63,12 +66,17 @@ const Wrapper = styled.section`
       font-weight: bold;
     }
 
+    .logoText {
+      color: ${({ theme }) => theme.colors.helper};
+    }
+
     .titleBackground {
       display: inline;
     }
 
     .intro-data {
       margin-bottom: 0;
+      color: ${({ theme }) => theme.colors.helper2};
     }
   }
 

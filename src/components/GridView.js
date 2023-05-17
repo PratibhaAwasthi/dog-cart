@@ -5,7 +5,7 @@ import Product from "./Product";
 const GridView = ({ products }) => {
   return (
     <Wrapper className="section">
-      <div className="container grid grid-three-column">
+      <div className="container grid grid-three-column" data-testid="grid-view">
         {products.map((curElem) => {
           return <Product key={curElem.id} {...curElem} />;
         })}
@@ -26,6 +26,8 @@ const Wrapper = styled.section`
   }
 
   figure {
+    // Styling for the figure element
+
     width: auto;
     display: flex;
     justify-content: center;
@@ -59,6 +61,7 @@ const Wrapper = styled.section`
   }
 
   .card {
+    // styling for the card element
     background-color: ${({ theme }) => theme.colors.bg};
     border-radius: 1rem;
 

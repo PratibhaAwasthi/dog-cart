@@ -4,18 +4,23 @@ import { FaCheck } from "react-icons/fa";
 import CartAmountToggle from "./CartAmountToggle";
 import { NavLink } from "react-router-dom";
 import { Button } from "../styles/Button";
+import { useCartContext } from "../context/cart_context";
 
 const AddToCart = ({ product }) => {
+  const { addToCart } = useCartContext();
+
   const { id, colors, stock } = product;
 
   const [color, setColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
 
   const setDecrease = () => {
+    // Decrease the amount by 1, but ensure it doesn't go below 1
     amount > 1 ? setAmount(amount - 1) : setAmount(1);
   };
 
   const setIncrease = () => {
+    // Increase the amount by 1, but ensure it doesn't exceed the stock quantity
     amount < stock ? setAmount(amount + 1) : setAmount(stock);
   };
 
@@ -39,14 +44,15 @@ const AddToCart = ({ product }) => {
         </p>
       </div>
 
-      {/* add to cart  */}
+      {/* Add to cart amount toggle */}
       <CartAmountToggle
         amount={amount}
         setDecrease={setDecrease}
         setIncrease={setIncrease}
       />
 
-      <NavLink to="/cart">
+      {/* Add to cart button */}
+      <NavLink to="/cart" onClick={() => addToCart(id, color, amount, product)}>
         <Button className="btn">Add To Cart</Button>
       </NavLink>
     </Wrapper>
@@ -54,11 +60,13 @@ const AddToCart = ({ product }) => {
 };
 
 const Wrapper = styled.section`
+  /* Colors section styles */
   .colors p {
     display: flex;
     justify-content: flex-start;
     align-items: center;
   }
+
   .btnStyle {
     width: 2rem;
     height: 2rem;
@@ -84,7 +92,7 @@ const Wrapper = styled.section`
     color: #fff;
   }
 
-  /* we can use it as a global one too  */
+  /* Amount toggle styles */
   .amount-toggle {
     margin-top: 3rem;
     margin-bottom: 1rem;
@@ -105,4 +113,5 @@ const Wrapper = styled.section`
     }
   }
 `;
+
 export default AddToCart;

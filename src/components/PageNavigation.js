@@ -21,6 +21,7 @@ const Wrapper = styled.section`
 
   a {
     font-size: 3.2rem;
+    color: ${({ theme }) => theme.colors.helper};
   }
 `;
 

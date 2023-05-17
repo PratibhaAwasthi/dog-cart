@@ -16,10 +16,11 @@ const App = () => {
       white: "#fff",
       black: " #212529",
       helper: "#f5b316",
+      helper2: "#ec7063",
 
       bg: "#F6F8FA",
       footer_bg: "#0a1435",
-      border: "rgba(98, 84, 243, 0.5)",
+      border: "#f4aeba",
       hr: "#ffffff",
       gradient:
         "linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%)",
